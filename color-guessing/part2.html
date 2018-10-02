@@ -3,7 +3,7 @@
 <head>
   <title>game on</title>
 </head>
-<body onload="start()">
+<body onload="game()">
         <script type="text/javascript">
             var finished = false;
             var guess = 0;
@@ -11,15 +11,7 @@
             var colors = ["blue","gold","gray","green","magenta","orange","cyan","red","white","yellow","pink","violet","brown"]
             var colors = colors.sort();
             var textans = colors.join("  ");
-            function start() {
-                n = true;
-                while(n){
-                    n = game();
-                    if (!n) {
-                        n = confirm("want to restart ?");;
-                    }
-                }
-            }
+            var n = false;
             function game(){
                 var randomno = Math.random() * (colors.length - 1);
                 var randomint = Math.floor(randomno);
@@ -45,7 +37,12 @@
                                 } else if (textindex == target) {
                                     document.body.style.backgroundColor = colors[target];
                                     alert("Congrats! you have choosen the right color "+"It took "+guess+" guesses to finish the game.")
-                                    return true;
+                                    var a = confirm("want to restart ?");
+                                    if (a === true) {
+                                        return false;
+                                    } else {
+                                        return true;
+                                    }
                                 }                                
 
                             } else {
@@ -54,8 +51,8 @@
                             }
 
                 }
-                return false;               
-                }; 
+             
+            };
 
 
         </script>
