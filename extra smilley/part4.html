@@ -9,7 +9,6 @@
         			height: 100%;
         			max-height: 100%;
         		}
-
         		body {
         			display: flex;
         			flex-direction: column;
@@ -29,7 +28,6 @@
         			width: 50%;
         			border-left: 1px solid #a0a0a0;
         		}
-
         		.container {
         			display: flex;
         			flex-direction: row;
@@ -46,14 +44,13 @@
 	</style>
 	<script>
 		
-
 	    function generateFaces(){
 	    		var numberOfFaces = 5;
 				var theLeftSide = document.getElementById("leftSide");
 				
 	    	for(i=0;i<numberOfFaces;i++){
 	    		var smiley = document.createElement("img");
-	    		smiley.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+	    		smiley.src="data:image/png;base64,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";
 	    		//smiley.src="./download.ico";
 	    		smiley.cssClass = "smiley";
 	    		smiley.style.top = ""+Math.random()*400+ "px";
@@ -63,7 +60,6 @@
 	    		document.getElementById("leftSide").appendChild(smiley);
 	    		smiley.style.width = "70px";
 	    		smiley.style.height = "70px";
-
 	    	}
 	    	var theRightSide = document.getElementById("rightSide");
 	    	var leftSideImages = theLeftSide.cloneNode(true);
@@ -77,18 +73,13 @@
 			numberOfFaces += 5;
 			generateFaces();
        		};
-
        theBody.onclick = function gameOver() {
 			alert("Game Over!");
 			theBody.onclick = null;
 			theLeftSide.lastChild.onclick = null;
-
 				
         }; 
-
-
    };
-
    function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
