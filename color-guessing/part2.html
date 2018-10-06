@@ -8,24 +8,24 @@
             var finished = false;
             var guess = 0;
             var text;
-            var colors = ["blue","gold","gray","green","magenta","orange","cyan","red","white","yellow"]
+            var colors = ["blue","gold","gray","green","magenta","orange","cyan","red","white","yellow","pink","violet","brown"]
             var colors = colors.sort();
             var textans = colors.join("  ");
+            var n = false;
             function game(){
                 var randomno = Math.random() * (colors.length - 1);
                 var randomint = Math.floor(randomno);
                 var target = randomint ;
                 var answer = colors[target];
-                alert("the correct answer is:"+answer);
+                //alert("the correct answer is:"+answer);
                 while(!finished){
-                text = prompt("I am thinking of one of these colors:\n\n"+textans+"\n"+"What color am I thinking of ?").toLowerCase();
-                textindex = colors.indexOf(text);
-                guess += 1;
-                finished = check();
-                
-            }
+                    text = prompt("I am thinking of one of these colors:\n\n"+textans+"\n"+"What color am I thinking of ?").toLowerCase();
+                    textindex = colors.indexOf(text);
+                    guess += 1;
+                    finished = check();
+                }
 
-            function check(){
+                function check(){
                    if (textindex > -1) {
                                 if (textindex > target) {
                                     alert ("Sorry, your guess is not correct!\n\n"+"Hint: your color is alphabetically higher than mine.\n\n"+"Please try again.");
@@ -36,8 +36,13 @@
                                     return false;   
                                 } else if (textindex == target) {
                                     document.body.style.backgroundColor = colors[target];
-                                    alert("Congrats! you have choosen the right color"+"It took"+guess+"guesses to finish the game.")
-                                    return true;
+                                    alert("Congrats! you have choosen the right color "+"It took "+guess+" guesses to finish the game.")
+                                    var a = confirm("want to restart ?");
+                                    if (a === true) {
+                                        return false;
+                                    } else {
+                                        return true;
+                                    }
                                 }                                
 
                             } else {
@@ -45,8 +50,9 @@
                                 return false;
                             }
 
-                        } 
-        };
+                }
+             
+            };
 
 
         </script>
